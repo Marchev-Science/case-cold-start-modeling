@@ -7,7 +7,7 @@
 
 This is an open-ended type of case study, where you are supposed to go through the process and not having any critical mteric values to crosschech against. So the results are going to be open for disscusions as long as you have gone though the whole case and publish it as required by the expected results section. On the other hand you could enrich the cae with own additions - for example your own business rules, other publicly available data sets, etc., as long as you publish your additions (or the way to obtain them) in the case solution. 
 
-The case is made as a teamwork assignment as it requires diverse set of skills and several tens of hours to be solved. 
+The case is made as a teamwork assignment as it requires diverse set of skills and several tens of hours to be solved. Some calculation time also has to be considered, as some of the operations planned in the case may be calculation extensive.
 
 
 **1.2 Case phases**
@@ -31,7 +31,7 @@ flowchart TD;
 
 *Data synthesis*
 
-Using the provided data in form of feature distributions, correlation matrix among numerical variables, business rules, and data dictionary (for referense purposes) you must synthesise datta set of at least 30000 records and at least the features described in the data dictionary. You could encode the data however you want, but have to include the description in the soution. You are most probably going to use various methods when sythesising the dataset, but you must conform (within reasonable deviations) to the limitations given by the raw data:
+Using the provided data in form of feature distributions, correlation matrix among numerical variables, business rules, and data dictionary (for referense purposes) you must synthesise datta set of at least 30000 records and at least the features described in the data dictionary. The dataset contains mainly demograpphic data where each record should represent one individual - customer of banking services. You could encode the data however you want, but have to include the description in the soution. You are most probably going to use various methods when sythesising the dataset, but you must conform (within reasonable deviations) to the limitations given by the raw data:
 -  features distributions
 -  corrlation matrix 
 -  business rules
@@ -40,18 +40,34 @@ Using the provided data in form of feature distributions, correlation matrix amo
 
 *Feature engineering*
 
-Using as many as possible feature engineering techniques, create new features, and then select the significant ones. The ones which selected, should be described in a matter similar to the data dictionary, where the  
+Using as many as possible feature engineering techniques, create new features, and then select the significant ones. The ones which selected, should be described in a matter similar to the data dictionary, where the  field "Derivation" formulate how you calculate it. Any additional innovative data preparation techniques are acceptable such as unsuppervised ML, spicific regrouping of data, randomized humanization, injecting sythnetic outliers, etc.
+
 
 *Deal with imbalanced data*
+
+For some (if not all) of the propensity models the dependent feature is going to be imbalanced and before modeling you will have to deal with that first. Variuos techniques are possible, as long as you get reasonable metric scores (also you may propose the metrics which work better for the case).
 
 
 *Propensity models*
 
+The models you are expected to make should return individual propensity to buy score for every individualon all four of the credit products, as follows:
+- Overdraft 
+- Consumer credit
+- Mortgage loan
+- Credit card 
+
+It is highly encouraged to try multiple classes of models for each dependent feature, and at least some of the finally selected models should be of black box nature (so requiring explainability modeling).
+
+Use argumented method for validation of your choosing, but do have in mind that at least 5000 records should be separated as out-of-sample test set, and maybe another 5000 should be used as in-sample validation for various purposes (including hyperoptimization).
+
 
 *Hyperparametric optimization*
 
+For the purpose of exercising do hyperparametric optimizations on the best performing models for each product type. If you have time/hardware constraints, keep the hyper parameter grid smaller - 4-5 most important parameters should be enough. Again - you have the choice as to which technique for hyperparametric optimization to use.
+
 
 *Explainability models*
+
 
 
 
