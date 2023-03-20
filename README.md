@@ -84,7 +84,7 @@ Upload your solutions [here...](https://github.com/Marchev-Science/case-cold-sta
 
 **2.1 Features distributions**
 
-These are the distributions of 
+These are the distributions of the non-numeric features with their respective labels:
 
 ```python
 
@@ -110,6 +110,29 @@ corr = {
 
 **2.3 Business rules**
 
+These are the given business rules:
+
+ | id | Independent feature | Independent feature value | Dependent feature | Dependent feature value filter | Note | 
+ | --- | --- | --- | --- | --- | --- |
+ | 1 | Marital status | Married | Number of household members | >2 | The number of household members in family households is more likely to be reater than 2 | 
+ | 2 | Profession - Industry | Financial and administrative activities | Previous investment experience in years | >0 | They are more likely to own a bank account | 
+ | 3 | Age - completed years | <25 | Previous investment experience in years | 0 | Under 24s are less likely to have investment experience. Between 35-44 and 45-54 are more likely to have extensive investment experience | 
+ | 4 | Age - completed years | <25 | Level of education | <Higher | Under 24s are less likely to have a college degree | 
+ | 5 | Age - completed years | <25 | Number of children under 18 years | <2 | From 20-24, it is less likely to have more than 1 child under 18 | 
+ | 6 | Previous investment experience in years | >0 | Investment experience with bank deposits | Y | They are more likely to own a bank account | 
+ | 7 | Investment in stocks | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 8 | Investment in bonds | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 9 | Other investments | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 10 | Investment in a fund | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 11 | Currency investments | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 12 | Investing in crypto currencies | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 13 | Investment in government securities | Y | Previous investment experience in years | >0 | Previous investment experience in years | 
+ | 14 | Age - completed years | <25 | Bank account | N | Under 24s are less likely to have a checking account | 
+ | 15 | Age - completed years | <18 | Bank account | N | Under 18 is not possible to have a current account | 
+ | 16 | Level of education | Higher | Income | >27601 | A higher level of education implies earnings in the upper range | 
+ | 17 | Number of children under 18 years | >1 | Number of household members | >3 | The number of household members is directly dependent on the number of children under 18. age | 
+ | 18 | Level of education | Higher | Socio-economic status | Economically active | A higher level of education implies an economically active status | 
+ | 19 | Income | >27601 | Taxes and insurance | >2500 | Earnings in the upper range, correspond to higher taxes and insurance | 
 
 
 **2.4 Data Dictionary**
@@ -117,7 +140,7 @@ corr = {
 | Number | Factor | Code | Variable type | Possible values |  Derivation |
 | --- | --- | --- | --- | --- |  --- |
 | 1 | gender | sex | Binary	 | M; F | simulation |
-| 2 | Age - completed years | age | Proportional | 20 - 24; 25 - 34; 35-44; 45-54; 55-64; 65-74; 75+ | correlation |
+| 2 | Age - completed years | age | Continuous | 20 - 85 | correlation |
 | 3 | Level of education | lv_educ | Ordinal | Incomplete; Primary; Basic; Secondary; Higher | simulation |
 | 4 | Employment status | empl_stat | Ordinal | Employers; Self-employed; Employed in private sector; Employed in public sector; Unpaid family workers | simulation |
 | 5 | Marital status | marit_stat | Ordinal | Single; Married; Divorced; Widowed | simulation |
@@ -128,14 +151,14 @@ corr = {
 | 10 | Socio-economic status | soc_econ_stat | Nominal | Economically active; Economically inactive | simulation |
 | 11 | Profession - Industry | prof_ind | Nominal | Agriculture, forestry and fisheries; Mining and processing industry; Utilities (electricity distribution and water supply); Construction; Trade, automobile and motorcycle repair; Transportation, warehousing and mail; Hospitality and restaurant services; Creation and distribution of information and creative products; Telecommunications; Financial and administrative activities; Public administration; Education and research; Human health and social work; Other activities | simulation |
 | 12 | Professional status | prof_stat | Nominal | Management contract; Employment contract; Civil contract; Self-employed; Unemployed; Pensioner | 
-| 13 | No. apartment/house | count_house | Interval | 0; 1; 2+ | simulation |
+| 13 | Number of owned apartments/houses | count_house | Interval | 0; 1; 2+ | simulation |
 | 14 | Land ownership | own_field | Nominal | YES; NO | simulation |
 | 15 | Cars per household | num_car_house | Interval | 0; 1; 2; 3+ | simulation |
-| 16 | The apartment I live in is | own_rent_house | Binary | own; rented | simulation |
+| 16 | The place I live in is | own_rent_house | Binary | my own; rented | simulation |
 | 17 | Education | edu | Nominal | Educational Sciences; Humanities; Social, Economic and Legal Sciences; Natural Sciences, Mathematics and Informatics; Technical Sciences; Agricultural Sciences and Veterinary Medicine; Health and Sports; Arts; Security and Defense | simulation |
 | 18 | Temperament | temp | Nominal | Choleric; Phlegmatic; Sanguine; Melancholic | simulation |
-| 19 | Individual risk preference | ind_risk | Interval | 0; 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1 | correlation |
-| 20 | Previous investment experience in years | invest_exp | Proportional | 0; 1-5; 6-10; 11-15; 16-25 | simulation |
+| 19 | Individual risk preference | ind_risk | Continuous | 0 - 1 | correlation |
+| 20 | Previous investment experience in years | invest_exp | Interval | 0; 1-5; 6-10; 11-15; 16-25 | simulation |
 | 21 | Investment experience with shares | shares | Binary | YES; NO | simulation |
 | 22 | Investment experience with bonds | corp_oblig | Binary | YES; NO | simulation |
 | 23 | Investment experience with others | oth | Binary | YES; NO | simulation |
@@ -144,20 +167,20 @@ corr = {
 | 26 | Investment experience with cryptocurrencies | crypto | Binary | YES; NO | simulation |
 | 27 | Investment experience with government securities | gov_bond | Binary | YES; NO | simulation |
 | 28 | Investment experience with bank deposits | deposits | Binary | YES; NO | simulation |
-| 29 | Income | income | Proportional | Up to 6121; Up to 12001; Up to 27601; Up to 43201; Up to 58801; Up to 74401; Over 90001+ | correlation |
-| 30 | Personal expenses | pers_exp | Proportional | up to 4500; up to 5000; up to 5500; up to 6000 | correlation |
-| 31 | Housing costs | house_exp | Proportional | up to 500; up to 1500; up to 3000; up to 4000 | correlation |
-| 32 | Taxes and insurance | taxes | Proportional | up to 500; up to 1000; up to 2000; up to 2500 | correlation |
-| 33 | Transport and communications | transp_telecom | Proportional | up to 500; up to 1000; up to 1500; up to 2500 | correlation |
-| 34 | Leisure and hobby | hobby | Proportional | 0; up to 1500; up to 2000; up to 3000 | correlation |
+| 29 | Income | income | Countinuous | Up to 6121; Up to 12001; Up to 27601; Up to 43201; Up to 58801; Up to 74401; Over 90001+ | correlation |
+| 30 | Personal expenses | pers_exp | Continuous | up to 4500; up to 5000; up to 5500; up to 6000 | correlation |
+| 31 | Housing costs | house_exp | Continuous | up to 500; up to 1500; up to 3000; up to 4000 | correlation |
+| 32 | Taxes and insurance | taxes | Continuous | up to 500; up to 1000; up to 2000; up to 2500 | correlation |
+| 33 | Transport and communications | transp_telecom | Continuous | up to 500; up to 1000; up to 1500; up to 2500 | correlation |
+| 34 | Leisure and hobby | hobby | Continuous | 0; up to 1500; up to 2000; up to 3000 | correlation |
 | 35 | Preferred method of banking | banking | Binary | Online; Offline | simulation |
-| 36 | Average number of bank transactions | bk_oprat | Proportional | Until 7; From 8 to 10; From 11 to 13; From 14 to 18 From 19 | simulation |
-| 37 | Debit card | bk_dc | Proportional | Under one; One; Two; Three | simulation |
+| 36 | Average number of bank transactions | bk_oprat | Proportional | Up to 7; From 8 to 10; From 11 to 13; From 14 to 18; From 19 to more | simulation |
+| 37 | Debit card | bk_dc | Ordinal | Under one; One; Two; Three | simulation |
 | 38 | Credit card | bk_cc | Binary | YES; NO | simulation |
 | 39 | Bank account | bk_acc | Binary | YES; NO | simulation |
 | 40 | Property insurance | ins_prop | Binary | YES; NO | simulation |
 | 41 | Insurance - life | ins_life | Binary | YES; NO | simulation |
-| 42 | Insurance - Motor Vehicle (Casco) | ins_casco | Binary | YES; NO | simulation |
+| 42 | Insurance - Motor Vehicle | ins_casco | Binary | YES; NO | simulation |
 | 43 | Additional health insurance | health_ins | Binary | YES; NO | simulation |
 | 44 | Overdraft | overdraft | Binary | YES; NO | simulation |
 | 45 | Consumer credit | cons_cred | Binary | YES; NO | simulation |
