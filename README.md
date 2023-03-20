@@ -110,7 +110,7 @@ corr = {
 
 **2.3 Business rules**
 
-These are the given business rules:
+These are the given business rules (you could expand the list if you see fit):
 
  | id | Independent feature | Independent feature value | Dependent feature | Dependent feature value filter | Note | 
  | --- | --- | --- | --- | --- | --- |
@@ -133,6 +133,7 @@ These are the given business rules:
  | 17 | Number of children under 18 years | >1 | Number of household members | >3 | The number of household members is directly dependent on the number of children under 18. age | 
  | 18 | Level of education | Higher | Socio-economic status | Economically active | A higher level of education implies an economically active status | 
  | 19 | Income | >27601 | Taxes and insurance | >2500 | Earnings in the upper range, correspond to higher taxes and insurance | 
+
 
 
 **2.4 Data Dictionary**
