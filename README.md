@@ -4,6 +4,7 @@
 
 
 **1.1. Introduction**
+
 This is an open-ended type of case study, where you are supposed to go through the process and not having any critical mteric values to crosschech against. So the results are going to be open for disscusions as long as you have gone though the whole case and publish it as required by the expected results section. On the other hand you could enrich the cae with own additions - for example your own business rules, other publicly available data sets, etc., as long as you publish your additions (or the way to obtain them) in the case solution. 
 
 The case is made as a teamwork assignment as it requires diverse set of skills and several tens of hours to be solved. 
@@ -40,11 +41,24 @@ Using the provided data in form of feature distributions, correlation matrix amo
 *Feature engineering*
 
 
+*Deal with imbalanced data*
+
+
+*Propensity models*
+
+
+*Hyperparametric optimization*
+
+
+*Explainability models"
+
 
 
 **1.3. Expected results**
 
 The format of the solution has to be a single ".ipynb" file, with all documentation, explanations, needed outputs, visualizations, etc. included in their respectable places. You could use any programing language which runs in this environment to solve the case.
+
+Upload your solutions [here...](https://github.com/Marchev-Science/case-cold-start-modeling/upload/main/uploads)
 
 
 **2. Case data**
