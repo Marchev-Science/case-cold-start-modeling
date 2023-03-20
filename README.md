@@ -56,6 +56,8 @@ The models you are expected to make should return individual propensity to buy s
 - Mortgage loan
 - Credit card 
 
+When modeling for each product type use the respected binary feature as dependent feature. Also have in mind that there features for applied for the different type of credit products.
+
 It is highly encouraged to try multiple classes of models for each dependent feature, and at least some of the finally selected models should be of black box nature (so requiring explainability modeling).
 
 Use argumented method for validation of your choosing, but do have in mind that at least 5000 records should be separated as out-of-sample test set, and maybe another 5000 should be used as in-sample validation for various purposes (including hyperoptimization).
@@ -68,7 +70,7 @@ For the purpose of exercising do hyperparametric optimizations on the best perfo
 
 *Explainability models*
 
-
+Once you have the best performing models for each product type, you should apply explanability models for those of them which are black-box. Here either use a ready-made library (which would be probably easier), or use a simplistic method with decesion tree explaining the high-propensity cases with only the significant variables. In case you use a special library, describe the process of installing it in the solution (these libraries tend to have compatibility issues so making their use replicable is helpful).
 
 
 **1.3. Expected results**
@@ -82,10 +84,15 @@ Upload your solutions [here...](https://github.com/Marchev-Science/case-cold-sta
 
 **2.1 Features distributions**
 
+These are the distributions of 
+
+```python
+
+```
 
 **2.2 Correlation matrix**
 
-The following data is the Pearson correlation matrix among the numerical features.
+The following data is the Pearson correlation matrix among the numerical features. You could safely assume normal (or close to normal) distribution for all of those features.
 
 ```python
 corr = {
