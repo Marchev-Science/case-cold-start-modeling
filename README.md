@@ -1,16 +1,16 @@
 # Case cold start modeling
 
-**1. Case description**
+## **1. Case description**
 
 
-**1.1. Introduction**
+### **1.1. Introduction**
 
 This is an open-ended type of case study, where you are supposed to go through the process and not having any critical mteric values to crosschech against. So the results are going to be open for disscusions as long as you have gone though the whole case and publish it as required by the expected results section. On the other hand you could enrich the cae with own additions - for example your own business rules, other publicly available data sets, etc., as long as you publish your additions (or the way to obtain them) in the case solution. 
 
 The case is made as a teamwork assignment as it requires diverse set of skills and several tens of hours to be solved. Some calculation time also has to be considered, as some of the operations planned in the case may be calculation extensive.
 
 
-**1.2 Case phases**
+### **1.2 Case phases**
 
 Case scheme:
 
@@ -73,16 +73,16 @@ For the purpose of exercising do hyperparametric optimizations on the best perfo
 Once you have the best performing models for each product type, you should apply explanability models for those of them which are black-box. Here either use a ready-made library (which would be probably easier), or use a simplistic method with decesion tree explaining the high-propensity cases with only the significant variables. In case you use a special library, describe the process of installing it in the solution (these libraries tend to have compatibility issues so making their use replicable is helpful).
 
 
-**1.3. Expected results**
+### **1.3. Expected results**
 
 The format of the solution has to be a single ".ipynb" file, with all documentation, explanations, needed outputs, visualizations, etc. included in their respectable places. You could use any programing language which runs in this environment to solve the case.
 
 Upload your solutions [here...](https://github.com/Marchev-Science/case-cold-start-modeling/upload/main/uploads)
 
 
-**2. Case data**
+## **2. Case data**
 
-**2.1 Features distributions**
+### **2.1 Features distributions**
 
 These are the distributions of the non-numeric features with their respective labels:
 
@@ -135,7 +135,7 @@ dists = {
 }
 ```
 
-**2.2 Correlation matrix**
+### **2.2 Correlation matrix**
 
 The following data is the Pearson correlation matrix among the numerical features. You could safely assume normal (or close to normal) distribution for all of those features.
 
@@ -153,7 +153,7 @@ corr = {
 }
 ```
 
-**2.3 Business rules**
+### **2.3 Business rules**
 
 These are the given business rules (you could expand the list if you see fit):
 
@@ -181,7 +181,7 @@ These are the given business rules (you could expand the list if you see fit):
 
 
 
-**2.4 Data Dictionary**
+### **2.4 Data Dictionary**
 
 | Number | Factor | Code | Variable type | Possible values |  Derivation |
 | --- | --- | --- | --- | --- |  --- |
