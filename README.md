@@ -87,7 +87,52 @@ Upload your solutions [here...](https://github.com/Marchev-Science/case-cold-sta
 These are the distributions of the non-numeric features with their respective labels:
 
 ```python
-
+dists = {
+    'sex':{'labels':['M; F'], 'values':[0.4854368932,0.5145631068]},
+    'lv_educ':{'labels':['Incomplete; Primary; Basic; Secondary; Higher'], 'values':[0.0595,0.07788016474,0.2309254283,0.4359496722,0.1957067711]},
+    'empl_stat':{'labels':['Employers; Self-employed; Employed in private sector; Employed in public sector; Unpaid family workers'], 'values':[0.03631598652,0.07272557095,0.6708785723,0.2126544365,0.00742543367]},
+    'marit_stat':{'labels':['Single; Married; Divorced; Widowed'], 'values':[0.397,0.443,0.058,0.102]},
+    'house_memb':{'labels':['1; 2; 3; 4; 5; 6; 7+'], 'values':[0.1805,0.3778,0.2387,0.1157,0.0525,0.0238,0.011]},
+    'chil_u_18_y':{'labels':['No children under 18; One child under 18; Two children under 18; Three children under 18; Four children under 18; Five children under 18; Six or more children under 18'], 'values':[0.422602157,0.36552047,0.183222339,0.020674764,0.004993779,0.001875149,0.001111341]},
+    'nation':{'labels':['Bulgaria; EU; Other'], 'values':[0.9950198043,0.001146570676,0.003833625045]},
+    'religion':{'labels':['Protestant; Catholic; Orthodox; Muslim; Other; No religion; I do not identify myself'], 'values':[0.011,0.008,0.76,0.1,0.002,0.047,0.072]},
+    'soc_econ_stat':{'labels':['Economically active; Economically inactive'], 'values':[0.6151643031,0.3848356969]},
+    'prof_ind':{'labels':['Agriculture, forestry and fisheries; Mining and processing industry; Utilities (electricity distribution and water supply); Construction; Trade, automobile and motorcycle repair; Transportation, warehousing and mail; Hospitality and restaurant services; Creation and distribution of information and creative products; Telecommunications; Financial and administrative activities; Public administration; Education and research; Human health and social work; Other activities'], 'values':[0.03090815115,0.2353,0.029,0.05523651408,0.1645618594,0.06439111505,0.05161626582,0.03936261795,0.07356911161,0.04836124844,0.104946474,0.06006423384,0.04269692032]},
+    'prof_stat':{'labels':['Management contract; Employment contract; Civil contract; Self-employed; Unemployed; Pensioner'], 'values':[0.01783393631,0.4732428049,0.02497602302,0.0385148509,0.167699009,0.277733376]},
+    'count_house':{'labels':['0; 1; 2+'], 'values':[0.37,0.6,0.03]},
+    'own_field':{'labels':['YES; NO'], 'values':[0.184481059,0.2621335023,0.5533854387]},
+    'num_car_house':{'labels':['0; 1; 2; 3+'], 'values':[0.5714285714,0.36,0.06428571429,0.004285714286]},
+    'own_rent_house':{'labels':['my own; rented'], 'values':[0.843,0.157]},
+    'edu':{'labels':['Educational Sciences; Humanities; Social, Economic and Legal Sciences; Natural Sciences, Mathematics and Informatics; Technical Sciences; Agricultural Sciences and Veterinary Medicine; Health and Sports; Arts; Security and Defense'], 'values':[0.07591254907,0.0461889827,0.5266633332,0.04571641724,0.1533297557,0.01776640163,0.0930038303,0.02247374859,0.01891291637]},
+    'temp':{'labels':['Choleric; Phlegmatic; Sanguine; Melancholic'], 'values':[0.38,0.11,0.23,0.28]},
+    'invest_exp':{'labels':['0; 1-5; 6-10; 11-15; 16-25'], 'values':[0.7,0.2,0.06,0.03,0.01]},
+    'shares':{'labels':['YES; NO'], 'values':[0.003394353314,0.9966056467]},
+    'corp_oblig':{'labels':['YES; NO'], 'values':[0.0003792213936,0.9996207786]},
+    'oth':{'labels':['YES; NO'], 'values':[0.000592597502012084,0.999407402497988]},
+    'inv_fund':{'labels':['YES; NO'], 'values':[0.06491199709,0.9350880029]},
+    'cash':{'labels':['YES; NO'], 'values':[0.04105169923,0.9589483008]},
+    'crypto':{'labels':['YES; NO'], 'values':[0.003284135938,0.9967158641]},
+    'gov_bond':{'labels':['YES; NO'], 'values':[0.06835666691,0.9316433331]},
+    'deposits':{'labels':['YES; NO'], 'values':[0.8180293286,0.1819706714]},
+    'banking':{'labels':['Online; Offline'], 'values':[0.09,0.91]},
+    'bk_oprat':{'labels':['Up to 7; From 8 to 10; From 11 to 13; From 14 to 18; From 19 to more'], 'values':[0.0084,0.2424,0.4729,0.2615,0.0148]},
+    'bk_dc':{'labels':['Under one; One; Two; Three'], 'values':[0.01,0.57,0.38,0.04]},
+    'bk_cc':{'labels':['YES; NO'], 'values':[0.17,0.83]},
+    'bk_acc':{'labels':['YES; NO'], 'values':[0.8634087377,0.1365912623]},
+    'ins_prop':{'labels':['YES; NO'], 'values':[0.05,0.95]},
+    'ins_life':{'labels':['YES; NO'], 'values':[0.09,0.91]},
+    'ins_casco':{'labels':['YES; NO'], 'values':[0.03,0.97]},
+    'health_ins':{'labels':['YES; NO'], 'values':[0.02,0.98]},
+    'overdraft':{'labels':['YES; NO'], 'values':[0.19,0.81]},
+    'cons_cred':{'labels':['YES; NO'], 'values':[0.26,0.74]},
+    'mortgage':{'labels':['YES; NO'], 'values':[0.02,0.98]},
+    'car_leas':{'labels':['YES; NO'], 'values':[0.2,0.8]},
+    'pens_ins':{'labels':['YES; NO'], 'values':[0.11,0.89]},
+    'overdraft_app':{'labels':['YES; NO'], 'values':[0.2439,0.7561]},
+    'cons_cred_app':{'labels':['YES; NO'], 'values':[0.305299502487562,0.694700497512438]},
+    'mortgage_app':{'labels':['YES; NO'], 'values':[0.03,0.97]},
+    'bk_cc_app':{'labels':['YES; NO'], 'values':[0.21,0.79]}
+}
 ```
 
 **2.2 Correlation matrix**
