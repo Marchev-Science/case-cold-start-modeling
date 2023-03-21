@@ -58,6 +58,8 @@ The models you are expected to make should return individual propensity to buy s
 
 When modeling for each product type use the respected binary feature as dependent feature. Also have in mind that there features for applied for the different type of credit products.
 
+You may add suitable visualizations of the model results.
+
 It is highly encouraged to try multiple classes of models for each dependent feature, and at least some of the finally selected models should be of black box nature (so requiring explainability modeling).
 
 Use argumented method for validation of your choosing, but do have in mind that at least 5000 records should be separated as out-of-sample test set, and maybe another 5000 should be used as in-sample validation for various purposes (including hyperoptimization).
