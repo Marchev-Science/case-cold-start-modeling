@@ -249,7 +249,7 @@ Here are some useful tools to work with the data
 def extract_dists(x,dists):
     '''
     A function to extract distributions from the dictionary dists,where:
-    x is the name of the feature to extract
+    x is the name of the feature to extract in ''
     dists is the dictionary with all distributions
     '''
     import pandas as pd
