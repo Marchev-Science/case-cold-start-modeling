@@ -31,7 +31,7 @@ flowchart TD;
 
 *Data synthesis*
 
-Using the provided data in form of feature distributions, correlation matrix among numerical variables, business rules, and data dictionary (for referense purposes) you must synthesise datta set of at least 30000 records and at least the features described in the data dictionary. The dataset contains mainly demograpphic data where each record should represent one individual - customer of banking services. You could encode the data however you want, but have to include the description in the soution. You are most probably going to use various methods when sythesising the dataset, but you must conform (within reasonable deviations) to the limitations given by the raw data:
+Using the provided data in form of feature distributions, correlation matrix among numerical variables, business rules, and data dictionary (for referense purposes) you must synthesise data set of at least 30000 records and at least the features described in the data dictionary. Note that you will need to synthesize about 50000+ records, before reduction by business rules to have 30000 as a final dataset. The dataset contains mainly demograpphic data where each record should represent one individual - customer of banking services. You could encode the data however you want, but have to include the description in the soution. You are most probably going to use various methods when sythesising the dataset, but you must conform (within reasonable deviations) to the limitations given by the raw data:
 -  features distributions
 -  corrlation matrix 
 -  business rules
