@@ -237,3 +237,25 @@ These are the given business rules (you could expand the list if you see fit):
 | 51 | Consumer credit - applied | cons_cred_app | Binary | YES; NO | simulation |
 | 52 | Mortgage loan - applied | mortgage_app | Binary | YES; NO | simulation |
 | 53 | Credit card - applied | bk_cc_app | Binary | YES; NO | simulation |
+
+
+## **3. Toolbox**
+
+Here are some useful tools to work with the data
+
+### **3.1. Extract distributions from the dictionary
+
+```python
+def extract_dists(x,dists):
+    import pandas as pd
+    '''
+    A function to extract distributions from the dictionary dists,where:
+    x is the name of the feature to extract
+    dists is the dictionary with all distributions
+    '''
+    column_names = dists[x]['labels']
+    values = [dists[x]['values']]
+    pd_df = pd.DataFrame(data=values, columns=column_names)
+    pd_df.index = pd.Index([x])
+    return pd_df
+```
