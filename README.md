@@ -247,12 +247,12 @@ Here are some useful tools to work with the data
 
 ```python
 def extract_dists(x,dists):
-    import pandas as pd
     '''
     A function to extract distributions from the dictionary dists,where:
     x is the name of the feature to extract
     dists is the dictionary with all distributions
     '''
+    import pandas as pd
     column_names = dists[x]['labels']
     values = [dists[x]['values']]
     pd_df = pd.DataFrame(data=values, columns=column_names)
