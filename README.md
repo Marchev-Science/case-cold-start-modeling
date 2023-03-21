@@ -243,7 +243,7 @@ These are the given business rules (you could expand the list if you see fit):
 
 Here are some useful tools to work with the data
 
-### **3.1. Extract distributions from the dictionary
+### **3.1. Extract distributions from the dictionary**
 
 ```python
 def extract_dists(x,dists):
