@@ -259,3 +259,19 @@ def extract_dists(x,dists):
     pd_df.index = pd.Index([x])
     return pd_df
 ```
+
+### **3.2. Convert the dictionary with correlation matrix to dataframe**
+
+```python
+def corr2df(corr):
+    '''
+    A function to create correlation dataframe from dictionary corr, where
+    corr is the dictionary with the correlation matrix
+    '''
+    import pandas as df
+    corr_df = pd.DataFrame(corr)
+    corr_df.set_index('features', inplace=True)
+    corr_df.index.name=None
+    return corr_df
+```
+
