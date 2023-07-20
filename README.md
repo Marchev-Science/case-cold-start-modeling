@@ -90,6 +90,7 @@ These are the distributions of the non-numeric features with their respective la
 
 ```python
 dists = {
+    'pers_exp':{'labels':['group1', 'group2', 'group3', 'group4'], 'values':[0.10,0.44,0.33,0.14]},
     'sex':{'labels':['M', 'F'], 'values':[0.4854368932,0.5145631068]},
     'lv_educ':{'labels':['Incomplete', 'Primary', 'Basic', 'Secondary', 'Higher'], 'values':[0.0595,0.07788016474,0.2309254283,0.4359496722,0.1957067711]},
     'empl_stat':{'labels':['Employers', 'Self-employed', 'Employed in private sector', 'Employed in public sector', 'Unpaid family workers'], 'values':[0.03631598652,0.07272557095,0.6708785723,0.2126544365,0.00742543367]},
@@ -154,6 +155,15 @@ corr = {
     'hobby': [0.00931630696561133, -0.00332322616613201, 0.352350802339294, 0.714298364869941, 0.679286362990223, 0.689442053350162, 0.714114127908189, 1]
 }
 ```
+
+```python
+# DataFrame of means
+df = pd.DataFrame([50.58, 0.6039, 13579.30, 5305.00, 2260, 1500, 1335, 1740],
+                 columns=['age', 'ind_risk', 'income', 'pers_exp', 'house_exp', 'taxes', 'transp_telecom', 'hobby'])
+df.index = ['mean']
+```
+
+
 
 ### **2.3 Business rules**
 
